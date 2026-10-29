@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+  <div class="alert alert-success">
+    <h1 class="alert-heading">Congratulations!</h1>
+    <p>You completed the mock exam for <strong>{{ result.course_name }}</strong>.</p>
+    <p class="mb-0">Your score: <strong>{{ result.score }} / {{ result.total }}</strong></p>
+  </div>
+  <h2>Exam Results</h2>
+  <p>Correct answers: {{ result.score }}</p>
+  <p>Incorrect or unanswered: {{ result.total|add:"-"|add:result.score }}</p>
+</div>
+{% endblock %}
